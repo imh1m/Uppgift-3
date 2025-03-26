@@ -1,0 +1,230 @@
+body {
+    margin: 0;
+    padding: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 200;
+    background-color: #ffffff;
+    color: #000000;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: 1fr;
+    font-size: 20px;
+}
+
+.bild img {
+    max-width: 100%;  
+    height: auto;     
+}
+
+#Bakgrundsbild {
+    background-image: url(grello.png);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 400px;
+}
+
+/* header */
+header {
+    font-size: 20px;
+    font-weight: 400;
+    position: relative; 
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    border-bottom: 4px solid rgb(0, 0, 0);  
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 10px;   /* Justera avstånd från toppen */
+    left: 10px;  /* Justera avstånd från vänster */
+    width: 120px; /* Justera storlek */
+    height: 120px;
+    background-image: url('logga.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*sälj-knapp*/
+.sell-button {
+    display: block;
+    background: rgb(255, 13, 0); /* Röd/orange färg */
+    color: white;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.sell-button:hover {
+    background: rgb(255, 165, 0); /* Orange vid hover */
+    transform: scale(1.05);
+}
+
+/* kontakformulär*/
+.contact-form h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.contact-form label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.contact-form input {
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form label input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.contact-form button {
+    width: 8%;
+    padding: 10px;
+    background: rgb(16, 79, 180);
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+    background: rgb(12, 60, 140);
+    transform: scale(1.05);
+}
+
+/* navigation */
+nav {
+    display:inline-flex;
+    padding: 5px;
+    gap: 15px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+nav a {
+    text-decoration: none;
+    transition-duration: 0.4s;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+nav a:not(:has(img)) {
+    color: rgb(201, 31, 31);
+    font-size: 30px;
+    font-weight: thin;
+    cursor: pointer;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+nav a:not(:has(img)):hover {
+    transform: scale(1.05);
+}
+
+nav a:hover {
+    transform: scale(1.05);
+}
+
+nav a img {
+    border: none;
+    padding: 10px;
+}
+
+.nav-img {
+    width: 115px; /* Justera storleken på bilderna */
+    height: 80px;
+    border-radius: 1px; /* Ger rundade hörn om önskat */
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-img:hover {
+    transform: scale(1.1); /* Gör en lätt zoom-effekt vid hover */
+}
+
+/* annonser */
+.annons {
+    align-items: center;
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    max-width: 800px; /* Gör annonsen större */
+}
+
+.annons:hover {
+    transform: scale(1.03);
+}
+
+.annons img {
+    width: 700px; /* Större bild */
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.annons a {
+    text-decoration: none;
+    color: black;
+    align-items: center;
+}
+
+.annons h2 {
+    font-size: 24px; /* Större rubrik */
+    margin: 0;
+}
+
+.annons p {
+    font-size: 18px; /* Större text */
+    color: #666;
+    margin: 5px 0 0;
+}
+
+.bild img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        position: relative; /* Tar bort absolut positionering på små skärmar */
+        transform: none;
+        flex-direction: column;
+        align-items: flex-start;
+        left: auto;
+        top: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .main-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .annons-detaljer {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bild {
+        grid-column: span 2;
+    }
+}
